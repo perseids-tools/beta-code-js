@@ -4,7 +4,7 @@
   "description": "Convert Greek beta code to Greek characters",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --reporter spec"
+    "test": "mocha --reporter nyan"
   },
   "keywords": [
     "beta",
@@ -13,5 +13,9 @@
     "perseus"
   ],
   "author": "zfletch <zf.node@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.3.0"
+  }
 }
