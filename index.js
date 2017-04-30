@@ -58,6 +58,11 @@ module.exports = {
   betaCodeToGreek: betaCodeToGreek
 };
 
+if (typeof window !== 'undefined') {
+  window.greekToBetaCode = greekToBetaCode;
+  window.betaCodeToGreek = betaCodeToGreek;
+}
+
 function _longestKeyLength (obj) {
   var key;
   var length = 0;

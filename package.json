@@ -1,14 +1,15 @@
 {
   "name": "beta-code-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convert Greek beta code to Greek characters",
   "main": "index.js",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/zfletch/beta-code-js.git"
+    "type": "git",
+    "url": "https://github.com/zfletch/beta-code-js.git"
   },
   "scripts": {
-    "test": "mocha --reporter nyan"
+    "test": "mocha --reporter nyan",
+    "bundle": "browserify index.js > bundle/beta-code.js"
   },
   "keywords": [
     "beta",
@@ -19,6 +20,7 @@
   "author": "zfletch <zf.node@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "browserify": "^14.3.0",
     "chai": "^3.5.0",
     "mocha": "^3.3.0"
   }
