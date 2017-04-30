@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Convert Greek beta code to Greek characters",
   "main": "index.js",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/zfletch/beta-code-js.git"
+  },
   "scripts": {
     "test": "mocha --reporter nyan"
   },
