@@ -7,7 +7,7 @@ var unicode_to_beta_code = require('./vendor/beta-code-json/unicode_to_beta_code
 var max_beta_code_character_length = _longestKeyLength(beta_code_to_unicode);
 
 function greekToBetaCode (greek) {
-  var greek_characters = greek.split('');
+  var greek_characters = _normalize(greek).split('');
   var beta_code_characters = [];
   var current_character, ii;
 
@@ -25,7 +25,7 @@ function greekToBetaCode (greek) {
 }
 
 function betaCodeToGreek (beta_code) {
-  var beta_code_characters = beta_code.split('');
+  var beta_code_characters = _normalize(beta_code).split('');
   var greek_characters = [];
   var start = 0;
   var end, slice, new_start, current_character, max_length;
@@ -90,6 +90,14 @@ function _sigmaToEndOfWordSigma (string) {
 
 function _min (a, b) {
   return a < b ? a : b;
+}
+
+function _normalize (string) {
+  if (string.normalize) {
+    return string.normalize();
+  }
+
+  return string;
 }
 })();
 
