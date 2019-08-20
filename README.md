@@ -20,6 +20,18 @@ Usage
 -----
 
 ```javascript
+import { greekToBetaCode, betaCodeToGreek } from 'beta-code-js';
+
+greekToBetaCode('χαῖρε ὦ κόσμε');
+// => 'xai=re w)= ko/sme'
+
+betaCodeToGreek('mh=nin a)/eide qea\\ *phlhi+a/dew *)axilh=os');
+// => 'μῆνιν ἄειδε θεὰ Πηληϊάδεω Ἀχιλῆος'
+```
+
+or
+
+```javascript
 var bc = require('beta-code-js');
 
 bc.greekToBetaCode('χαῖρε ὦ κόσμε');
