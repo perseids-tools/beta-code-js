@@ -10,6 +10,10 @@ Converts Greek beta code to Greek characters and vice versa.
 
 ## Installation
 
+`yarn add beta-code-js`
+
+or
+
 `npm install beta-code-js`
 
 ## Usage
@@ -55,13 +59,17 @@ bc.betaCodeToGreek('mh=nin a)/eide qea\\ *phlhi+a/dew *)axilh=os');
 </html>
 ```
 
+## Setup
+
+`yarn install`
+
 ## Tests
 
-`npm test`
+`yarn test`
 
 ## Building for Browser
 
-`npm run bundle`
+`yarn bundle`
 
 ## Updating JSON
 
@@ -80,7 +88,7 @@ git commit
 ## Publishing
 
 * Bump version in `package.json`
-* Run `npm run bundle`
+* Run `yarn bundle`
 * Commit and push to GitHub
 * On GitHub, create a new release
 * Run `npm publish`
