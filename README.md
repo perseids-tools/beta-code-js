@@ -1,23 +1,18 @@
-Beta Code JS
-===================
+# Beta Code JS
 
-Overview
---------
+## Overview
 
 Converts Greek beta code to Greek characters and vice versa.
 
-Try it Out
-----------
+## Try it Out
 
-[https://zfletch.github.io/beta-code-converter-js/](https://zfletch.github.io/beta-code-converter-js/)
+[https://apps.perseids.org/beta-code/](https://apps.perseids.org/beta-code/)
 
-Installation
-------------
+## Installation
 
 `npm install beta-code-js`
 
-Usage
------
+## Usage
 
 ```javascript
 import { greekToBetaCode, betaCodeToGreek } from 'beta-code-js';
@@ -42,8 +37,7 @@ bc.betaCodeToGreek('mh=nin a)/eide qea\\ *phlhi+a/dew *)axilh=os');
 
 ```
 
-Usage in Browser
-----------------
+## Usage in Browser
 
 ```html
 <html>
@@ -61,18 +55,29 @@ Usage in Browser
 </html>
 ```
 
-Tests
------
+## Tests
 
 `npm test`
 
-Building for Browser
---------------------
+## Building for Browser
 
 `npm run bundle`
 
-Notes
------
+## Updating JSON
+
+```bash
+git subtree pull --prefix vendor/beta-code-json/ https://github.com/zfletch/beta-code-json master --squash
+```
+
+In the case of a merge conflict:
+
+```bash
+git checkout --theirs vendor/beta-code-json/ # if necessary
+git add vendor/beta-code-json
+git commit
+```
+
+## Notes
 
 For the mappings between beta code and Unicode, see [https://github.com/zfletch/beta-code-json](https://github.com/zfletch/beta-code-json).
 For an example of this package being used, see [https://github.com/zfletch/beta-code-converter-js](https://github.com/zfletch/beta-code-converter-js).

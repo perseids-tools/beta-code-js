@@ -71,5 +71,14 @@ describe('#betaCodeToGreek', function() {
     expect(bc.betaCodeToGreek(beta_code1)).to.equal(greek);
     expect(bc.betaCodeToGreek(beta_code2)).to.equal(greek);
   });
+
+  it('should convert characters with different capitalization orders', function() {
+    var beta_code1 = '*o(/rkos *a)/zwton *e(/llhnas *a)=pis';
+    var beta_code2 = '*(/orkos *)/azwton *(/ellhnas *)=apis';
+    var greek = 'Ὅρκος Ἄζωτον Ἕλληνας Ἆπις';
+
+    expect(bc.betaCodeToGreek(beta_code1)).to.equal(greek);
+    expect(bc.betaCodeToGreek(beta_code2)).to.equal(greek);
+  });
 });
 })();
