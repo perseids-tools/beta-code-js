@@ -80,7 +80,7 @@ git subtree pull --prefix vendor/beta-code-json/ https://github.com/zfletch/beta
 In the case of a merge conflict:
 
 ```bash
-git checkout --theirs vendor/beta-code-json/ # if necessary
+git checkout --theirs vendor/beta-code-json/
 git add vendor/beta-code-json
 git commit
 ```
