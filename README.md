@@ -77,6 +77,14 @@ git add vendor/beta-code-json
 git commit
 ```
 
+## Publishing
+
+* Bump version in `package.json`
+* Run `npm run bundle`
+* Commit and push to GitHub
+* On GitHub, create a new release
+* Run `npm publish`
+
 ## Notes
 
 For the mappings between beta code and Unicode, see [https://github.com/zfletch/beta-code-json](https://github.com/zfletch/beta-code-json).
