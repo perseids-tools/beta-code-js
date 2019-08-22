@@ -20,8 +20,8 @@
   "author": "zfletch <zf.node@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "browserify": "^14.3.0",
-    "chai": "^3.5.0",
-    "mocha": "^3.3.0"
+    "browserify": "^16.5.0",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0"
   }
 }
