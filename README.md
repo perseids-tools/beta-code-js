@@ -1,6 +1,6 @@
 # Beta Code JS
 
-Converts Greek beta code to Greek characters and vice versa.
+Converts Greek Beta Code to Greek characters and vice versa.
 
 ## Try it Out
 
@@ -13,6 +13,8 @@ Converts Greek beta code to Greek characters and vice versa.
 or
 
 `npm install beta-code-js`
+
+(See project on [npm](https://www.npmjs.com/package/beta-code-js))
 
 ## Usage
 
@@ -102,5 +104,5 @@ git commit
 
 ## Notes
 
-For the mappings between beta code and Unicode, see [https://github.com/perseids-tools/beta-code-json](https://github.com/perseids-tools/beta-code-json).
+For the mappings between Beta Code and Unicode, see [https://github.com/perseids-tools/beta-code-json](https://github.com/perseids-tools/beta-code-json).
 For an example of this package being used, see [https://github.com/perseids-project/beta-code-converter-js](https://github.com/perseids-project/beta-code-converter-js).
