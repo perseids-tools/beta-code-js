@@ -7,9 +7,14 @@
     "type": "git",
     "url": "https://github.com/perseids-tools/beta-code-js.git"
   },
+  "bugs": {
+    "url": "https://github.com/perseids-tools/beta-code-js/issues"
+  },
+  "homepage": "https://github.com/perseids-tools/beta-code-js",
   "scripts": {
     "test": "mocha --reporter nyan",
-    "bundle": "browserify index.js > bundle/beta-code.js"
+    "bundle": "browserify index.js > bundle/beta-code.js",
+    "lint": "eslint --ext=js --ext=jsx ."
   },
   "keywords": [
     "beta",
@@ -21,6 +26,9 @@
   "devDependencies": {
     "browserify": "^16.5.0",
     "chai": "^4.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1",
     "mocha": "^6.2.0"
   }
 }
