@@ -12,8 +12,8 @@
   },
   "homepage": "https://github.com/perseids-tools/beta-code-js",
   "scripts": {
-    "test": "mocha --reporter nyan",
-    "bundle": "browserify index.js > bundle/beta-code.js",
+    "test": "mocha --reporter dot",
+    "bundle": "browserify --standalone BetaCode index.js > bundle/beta-code.js",
     "lint": "eslint --ext=js --ext=jsx ."
   },
   "keywords": [

@@ -47,10 +47,10 @@ bc.betaCodeToGreek('mh=nin a)/eide qea\\ *phlhi+a/dew *)axilh=os');
 
 <body>
   <script>
-    console.log(greekToBetaCode('χαῖρε ὦ κόσμε'));
+    console.log(BetaCode.greekToBetaCode('χαῖρε ὦ κόσμε'));
     // => 'xai=re w)= ko/sme'
 
-    console.log(betaCodeToGreek('mh=nin a)/eide qea\\ *phlhi+a/dew *)axilh=os'));
+    console.log(BetaCode.betaCodeToGreek('mh=nin a)/eide qea\\ *phlhi+a/dew *)axilh=os'));
     // => 'μῆνιν ἄειδε θεὰ Πηληϊάδεω Ἀχιλῆος'
   </script>
 </body>
