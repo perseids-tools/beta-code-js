@@ -39,6 +39,15 @@ bc.betaCodeToGreek('mh=nin a)/eide qea\\ *phlhi+a/dew *)axilh=os');
 
 ```
 
+### With additional mappings
+
+```javascript
+import { betaCodeToGreek } from 'beta-code-js';
+
+betaCodeToGreek('f2a/nac', { f2: 'ϝ' })
+// => 'ϝάναξ'
+```
+
 ## Usage in Browser
 
 ```html

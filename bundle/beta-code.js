@@ -42,19 +42,40 @@ function normalize(string) {
   return string;
 }
 
-const maxBetaCodeCharacterLength = longestKeyLength(betaCodeToUnicode);
+function mergeObjects(obj1, obj2) {
+  const keys1 = Object.keys(obj1);
+  const keys2 = Object.keys(obj2);
+  const retObj = {};
+  let key;
+  let ii;
 
-function greekToBetaCode(greek) {
+  for (ii = 0; ii < keys1.length; ii += 1) {
+    key = keys1[ii];
+
+    retObj[key] = obj1[key];
+  }
+
+  for (ii = 0; ii < keys2.length; ii += 1) {
+    key = keys2[ii];
+
+    retObj[key] = obj2[key];
+  }
+
+  return retObj;
+}
+
+function greekToBetaCode(greek, customMap) {
   const greekCharacters = normalize(greek).split('');
   const betaCodeCharacters = [];
+  const map = mergeObjects(unicodeToBetaCode, customMap || {});
   let currentCharacter;
   let ii;
 
   for (ii = 0; ii < greekCharacters.length; ii += 1) {
     currentCharacter = greekCharacters[ii];
 
-    if (Object.prototype.hasOwnProperty.call(unicodeToBetaCode, currentCharacter)) {
-      betaCodeCharacters.push(unicodeToBetaCode[currentCharacter]);
+    if (Object.prototype.hasOwnProperty.call(map, currentCharacter)) {
+      betaCodeCharacters.push(map[currentCharacter]);
     } else {
       betaCodeCharacters.push(currentCharacter);
     }
@@ -63,9 +84,11 @@ function greekToBetaCode(greek) {
   return betaCodeCharacters.join('');
 }
 
-function betaCodeToGreek(betaCode) {
+function betaCodeToGreek(betaCode, customMap) {
   const betaCodeCharacters = normalize(betaCode).split('');
   const greekCharacters = [];
+  const map = mergeObjects(betaCodeToUnicode, customMap || {});
+  const maxBetaCodeCharacterLength = longestKeyLength(map);
   let start = 0;
   let end;
   let slice;
@@ -84,8 +107,8 @@ function betaCodeToGreek(betaCode) {
     for (end = newStart; end <= maxLength; end += 1) {
       slice = betaCodeCharacters.slice(start, end).join('');
 
-      if (Object.prototype.hasOwnProperty.call(betaCodeToUnicode, slice)) {
-        currentCharacter = betaCodeToUnicode[slice];
+      if (Object.prototype.hasOwnProperty.call(map, slice)) {
+        currentCharacter = map[slice];
         newStart = end;
       }
     }

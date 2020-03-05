@@ -36,6 +36,14 @@ describe('#greekToBetaCode', () => {
 
     expect(bc.greekToBetaCode(greek)).to.equal(betaCode);
   });
+
+  it('should be able to use a custom map', () => {
+    const greek = 'μοῡς';
+    const betaCode = 'mou_s';
+    const customMap = { ᾱ: 'a_', ῑ: 'i_', ῡ: 'u_' };
+
+    expect(bc.greekToBetaCode(greek, customMap)).to.equal(betaCode);
+  });
 });
 
 describe('#betaCodeToGreek', () => {
@@ -76,5 +84,13 @@ describe('#betaCodeToGreek', () => {
 
     expect(bc.betaCodeToGreek(betaCode1)).to.equal(greek);
     expect(bc.betaCodeToGreek(betaCode2)).to.equal(greek);
+  });
+
+  it('should be able to use a custom map', () => {
+    const greek = 'μοῡς';
+    const betaCode = 'mou_s';
+    const customMap = { a_: 'ᾱ', i_: 'ῑ', u_: 'ῡ' };
+
+    expect(bc.betaCodeToGreek(betaCode, customMap)).to.equal(greek);
   });
 });
