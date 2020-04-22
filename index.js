@@ -24,7 +24,7 @@ function longestKeyLength(obj) {
 //   - at the end of a line
 //   - followed by whitespace
 //   - followed by a punctuation character
-// REGEX NOTE: word boundary \b doesn't work well with unicode
+// REGEX NOTE: word boundary \b doesn't work well with Unicode
 function sigmaToEndOfWordSigma(string) {
   return string.replace(/σ(?=[,.:;·\s]|$)/g, 'ς');
 }
@@ -100,8 +100,8 @@ function betaCodeToGreek(betaCode, customMap) {
     newStart = start + 1;
     maxLength = min(betaCodeCharacters.length, start + maxBetaCodeCharacterLength);
 
-    // match the longest possible substring that's valid beta code, from left to right
-    // for example 'e)' is valid beta code (ἐ) but 'e)/' is also valid beta code (ἕ)
+    // match the longest possible substring that's valid Beta Code, from left to right
+    // for example 'e)' is valid Beta Code (ἐ) but 'e)/' is also valid Beta Code (ἕ)
     // the string 'e)/' should be interpreted as 'e)/' and not as 'e)' + '/'
     for (end = newStart; end <= maxLength; end += 1) {
       slice = betaCodeCharacters.slice(start, end).join('');
