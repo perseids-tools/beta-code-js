@@ -24,11 +24,11 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "browserify": "^16.5.1",
+    "browserify": "^16.5.2",
     "chai": "^4.2.0",
-    "eslint": "^7.5.0",
+    "eslint": "^7.7.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.0",
-    "mocha": "^8.0.1"
+    "mocha": "^8.1.1"
   }
 }
