@@ -30,6 +30,13 @@ describe('#greekToBetaCode', () => {
     expect(bc.greekToBetaCode(greek)).to.equal(betaCode);
   });
 
+  it('should convert characters with many diacritics', () => {
+    const greek = 'ᾧᾯ';
+    const betaCode = 'w(=|*(=w|';
+
+    expect(bc.greekToBetaCode(greek)).to.equal(betaCode);
+  });
+
   it('should normalize the Unicode', () => {
     const greek = 'Πολλὴ μὲν ἐν βροτοῖσι κοὐκ ἀνώνυμος θεὰ κέκλημαι Κύπρις οὐρανοῦ τ᾿ ἔσω·';
     const betaCode = '*pollh\\ me\\n e)n brotoi=si kou)k a)nw/numos qea\\ ke/klhmai *ku/pris ou)ranou= t᾿ e)/sw:';
@@ -78,12 +85,14 @@ describe('#betaCodeToGreek', () => {
   });
 
   it('should convert characters with different capitalization orders', () => {
-    const betaCode1 = '*o(/rkos *a)/zwton *e(/llhnas *a)=pis';
-    const betaCode2 = '*(/orkos *)/azwton *(/ellhnas *)=apis';
-    const greek = 'Ὅρκος Ἄζωτον Ἕλληνας Ἆπις';
+    const betaCode1 = '*o(/rkos *a)/zwton *e(/llhnas *a)=pis *w(=|';
+    const betaCode2 = '*(/orkos *)/azwton *(/ellhnas *)=apis *(=|w';
+    const betaCode3 = '*(/orkos *)/azwton *(/ellhnas *)=apis *(=w|';
+    const greek = 'Ὅρκος Ἄζωτον Ἕλληνας Ἆπις ᾯ';
 
     expect(bc.betaCodeToGreek(betaCode1)).to.equal(greek);
     expect(bc.betaCodeToGreek(betaCode2)).to.equal(greek);
+    expect(bc.betaCodeToGreek(betaCode3)).to.equal(greek);
   });
 
   it('should be able to use a custom map', () => {

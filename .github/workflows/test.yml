@@ -22,8 +22,8 @@ jobs:
       - name: Lint code
         run: yarn lint
 
-      - name: Audit dependencies
-        run: yarn audit
+      # - name: Audit dependencies
+      #   run: yarn audit
 
       - name: Run tests
         run: yarn test
