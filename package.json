@@ -1,6 +1,6 @@
 {
   "name": "beta-code-js",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "Convert Greek Beta Code to Greek characters",
   "main": "index.js",
   "repository": {
